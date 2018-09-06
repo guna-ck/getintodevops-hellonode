@@ -1,3 +1,7 @@
+def CONTAINER_NAME="getintodevops"
+def CONTAINER_TAG="latest"
+def DOCKER_HUB_USER="gunack23"
+def HTTP_PORT="8090"
 node {
     def app
 
