@@ -30,16 +30,16 @@ node {
     }
 
     #stage('Push image') {
-       #/* Finally, we'll push the image with two tags:
-         #* First, the incremental build number from Jenkins
-         #* Second, the 'latest' tag.
-         #* Pushing multiple tags is cheap, as all the layers are reused. */
+       /* Finally, we'll push the image with two tags:
+         * First, the incremental build number from Jenkins
+         * Second, the 'latest' tag.
+         * Pushing multiple tags is cheap, as all the layers are reused. */
        
-        #withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-          #sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          #sh 'docker push gunack23/hellonode:latest'
+        withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push gunack23/hellonode:latest'
 
-    #}
+    }
     
  #}
 }
