@@ -37,7 +37,7 @@ node {
        
         withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          sh 'docker push gunack23/ubuntu2:latest'
+          sh 'docker push gunack23/hellonode:latest'
 
     }
     
